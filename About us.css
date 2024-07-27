@@ -1,0 +1,255 @@
+/*------------------ GENERAL ------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    background: url("assets/BACKGROUND SIGN IN.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    overflow: visible;
+}
+
+.wrapper{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(39,39,39,0.4);
+    min-height: 110vh;
+}
+
+/*------------------ NAVIGATOR ------------------*/
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39,0.6), transparent);
+    z-index: 100;
+} 
+
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.nav-menu ul{
+    display: flex;
+}
+
+.nav-menu ul li{
+    list-style-type: none;
+
+}
+
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color:white;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover, .active{
+    border-bottom: 2px solid white;
+}
+
+.nav-menu-btn{
+    display: none;
+}
+
+/*------------------ CONTENT ------------------*/
+.team{
+	position: relative;
+	width: 100%;
+	height: 220vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.description {
+    text-align: justify;
+    width: 70%;
+    margin-bottom: 5%;
+    margin-top: 0;
+    padding: 25px;
+	background: #ffffff;
+	border-radius: 15px;
+	transition: all .38s ease;
+  }
+
+  .description img{
+    width: 70%;
+	height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+  }
+
+.team-content{
+	width: 100%;
+	max-width: 1350px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+	margin-top: 4rem;
+}
+.team-content img{
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.center h1{
+	color: #fff;
+	font-size: 4rem;
+	text-align: center;
+    margin-top: 12%;
+}
+.center h4{
+	color: #fff;
+	text-align: center;
+    margin-bottom: 5%;
+}
+
+.box{
+	padding: 16px;
+	background: #ffffff;/* #1b1229;*/
+	border-radius: 15px;
+	transition: all .38s ease;
+}
+.box h3{
+	font-size: 23px;
+	font-weight: 600;
+	color: #000000; /*#fff;*/
+	margin-bottom: 8px;
+}
+.box h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: #009a49; /* #b7b4bb;*/
+	margin-bottom: 15px;
+	letter-spacing: 2px;
+}
+.icons i{
+	display: inline-block;
+	color: #000000; /*#fff;*/
+	font-size: 20px;
+	margin: 0 8px;
+	transition: all .38s ease;
+}
+.icons i:hover{
+	transform: scale(1.2);
+}
+.box:hover{
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+/*------------------ RESPONSIVE SPECIFICATION ------------------*/
+@media only screen and (max-width: 786px){
+    .nav-menu.responsive{
+        top: 100px;
+    }
+    .nav-menu{
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, .9);
+        width: 100%;
+        height: 90vh;
+        transition: .3s;
+    }
+  
+  /* if backdrop support: very transparent and blurred */
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .nav-menu {
+        background-color: rgba(5, 170, 63, 0.375);
+      -webkit-backdrop-filter: blur(2em);
+      backdrop-filter: blur(2em);
+    }
+  }
+    .nav-menu ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu-btn{
+        display: block;
+    }
+    .nav-menu-btn i{
+        font-size: 25px;
+        color: #fff;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .nav-menu-btn i:hover{
+        background: rgba(255, 255, 255, 0.15);
+    }
+    .team_column {
+        width: 100%;
+        display: block;
+    }
+    body{
+        overflow: visible;
+    }
+    .description img{
+        width:100%;
+        height: auto;
+      }
+      .center h1{
+        font-size: 50%;
+    }
+    .description {
+        width: 90%;
+      }
+}
+
+@media only screen and (max-width: 540px) {
+    .wrapper{
+        min-height: 110vh;
+    }
+    .description img{
+        width:100%;
+        height: auto;
+      }
+      .center h1{
+        font-size: 50%;
+    }
+    .description {
+        width: 90%;
+      }
+}
+
+@media(max-width: 2240px){
+	.team{
+		width: 100%;
+		height: auto;
+		padding: 90px 2%;
+	}
+	.center h1{
+		font-size: 3.2rem;
+	}
+}

@@ -1,0 +1,375 @@
+/*------------------ GENERAL ------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+	outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+	--primary: #009a49;
+	--secondary: #bfc0c0;
+	--white: #fff;
+	--text-clr: #5b6475;
+	--header-clr: #25273d;
+	--next-btn-hover: #73bc83;
+	--back-btn-hover: #8b8c8c;
+}
+
+body{
+	background: url("assets/BACKGROUND MAIN.png");
+	color: var(--text-clr);
+	font-size: 16px;
+	position: relative;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+}
+
+.alert {
+    width:100%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    max-height: 2vh;
+    display: flex;
+    gap: 5px;
+ }
+ 
+/*------------------ CONTENT ------------------*/
+.wrapper{
+	width: 750px;
+	max-width: 100%;
+	background: var(--white);
+	margin: 100px auto 0;
+	padding: 50px;
+	border-radius: 5px;
+}
+
+.wrapper .btn_exit{
+	background: none;
+	color:#5b6475a4;
+	border: none;
+	margin-left: 76%;
+	font-size: small;
+}
+
+.wrapper .header{
+	margin-bottom: 35px;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper .header ul{
+	display: flex;
+}
+
+.wrapper .header ul li{
+	margin-right: 50px;
+	position: relative;
+}
+
+.wrapper .header ul li:last-child{
+	margin-right: 0;
+}
+
+.wrapper .header ul li:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 55px;
+	width: 100%;
+	height: 2px;
+	background: var(--secondary);
+}
+
+.wrapper .header ul li:last-child:before{
+	display: none;
+}
+
+.wrapper .header ul li div{
+	padding: 5px;
+	border-radius: 50%;
+}
+
+.wrapper .header ul li p{
+	width: 50px;
+	height: 50px;
+	background: var(--secondary);
+	color: var(--white);
+	text-align: center;
+	line-height: 50px;
+	border-radius: 50%;
+}
+
+.wrapper .header ul li.active:before{
+	background: var(--primary);
+}
+
+.wrapper .header ul li.active p{
+	background: var(--primary);
+}
+
+.wrapper .form_wrap{
+	margin-bottom: 35px;
+}
+
+.wrapper .form_wrap h2{
+	color: var(--header-clr);
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.wrapper .form_wrap .input_wrap{
+	width: 350px;
+	max-width: 100%;
+	margin: 0 auto 20px;
+	text-align: justify;
+}
+
+.wrapper .form_wrap .input_wrap:last-child{
+	margin-bottom: 0;
+}
+
+.wrapper .form_wrap .input_wrap label{
+	display: block;
+	margin-bottom: 5px;
+}
+
+.wrapper .form_wrap .input_wrap .input{
+	border: 2px solid var(--secondary);
+	border-radius: 3px;
+	padding: 10px;
+	display: block;
+	width: 100%;	
+	font-size: 16px;
+	transition: 0.5s ease;
+}
+
+.wrapper .form_wrap .input_wrap .input:focus{
+	border-color: var(--primary);
+}
+
+.wrapper .btns_wrap{
+	width: 350px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.wrapper .btns_wrap .common_btns{
+	display: flex;
+	justify-content: space-between;
+}
+
+.wrapper .btns_wrap .common_btns.form_1_btns{
+	justify-content: flex-end;
+}
+
+.wrapper .btns_wrap .common_btns button{
+	border: 0;
+	padding: 12px 15px;
+	background: var(--primary);
+	color: var(--white);
+	width: 135px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	border-radius: 3px;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+
+.wrapper .btns_wrap .common_btns button.btn_back{
+	background: var(--secondary);
+}
+
+.wrapper .btns_wrap .common_btns button.btn_next .icon{
+	display: flex;
+	margin-left: 10px;
+}
+
+.wrapper .btns_wrap .common_btns button.btn_back .icon{
+	display: flex;
+	margin-right: 10px;
+}
+
+.wrapper .btns_wrap .common_btns button.btn_next:hover,
+.wrapper .btns_wrap .common_btns button.btn_done:hover{
+	background: var(--next-btn-hover);
+}
+
+.wrapper .btns_wrap .common_btns button.btn_back:hover{
+	background: var(--back-btn-hover);
+}
+
+.modal_wrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+
+.modal_wrapper .shadow{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	opacity: 0;
+	transition: 0.2s ease;
+}
+
+.modal_wrapper .success_wrap{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-800px);
+	background: var(--white);
+	padding: 50px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	transition: 0.5s ease;
+}
+
+.modal_wrapper .success_wrap .modal_icon{
+	margin-left: 40%;
+	width: 45px;
+	height: 50px;
+	background: var(--primary);
+	color: var(--white);
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	display:flex;
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.modal_wrapper .success_wrap button{
+	width: 50%;
+	height: 50px;
+	margin-left: 25%;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	background: var(--primary);
+	color: var(--white);
+	font-size: 16px;
+	border-radius: 3px;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+
+.modal_wrapper .success_wrap p{
+	margin-top: 20px;
+	font-size: medium;
+	align-items: justify;
+	justify-content: center;
+}
+
+.modal_wrapper .success_wrap .btn{
+	margin-left: 20%;
+	width: auto;
+	height: auto;
+}
+
+.modal_wrapper.active{
+	visibility: visible;
+}
+
+.modal_wrapper.active .shadow{
+	opacity: 1;
+}
+
+.modal_wrapper.active .success_wrap{
+	transform: translate(-50%,-50%);
+}
+
+/*------------------ SURVEY FORM ------------------*/
+textarea{
+	width: 100%;
+	height: 150px;
+}
+
+
+.overall{
+	justify-content: center;
+	align-items: center;
+}
+
+.rating{
+	justify-content: center;
+	align-items: center;
+	font-size: 2.52rem;
+	color: gold;
+	margin-bottom: 2rem;
+}
+
+.rating .star{
+	cursor: pointer;
+}
+
+.rating .star:hover{
+	transform: scale(1.1);
+}
+
+.rating .star.active{
+	opacity: 0;
+	animation: animate .5s calc(var(--i) * .1s) ease-in-out forwards;
+}
+
+@keyframes animate{
+	0%{
+		opacity: 0;
+		transform: scaled(1);
+
+	}
+	50%{
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+table{
+	border-collapse: collapse;
+	empty-cells: hide;
+	color: black;
+	width: 100%;
+}
+
+table tbody .tableh{
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+table tbody th{
+	padding: 10px;
+	width: 100%;
+	font-size: small;
+	text-align: center;
+}
+
+table tbody .question{
+	text-align: left;
+}
+
+table tbody td{
+	padding: 8px;
+	width: 100%;
+	text-align: center;
+}

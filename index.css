@@ -1,0 +1,311 @@
+/*------------------ GENERAL ------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: url("assets/BACKGROUND SIGN IN.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    overflow: hidden;
+}
+
+.wrapper{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(39,39,39,0.4);
+    min-height: 110vh;
+}
+
+/*------------------ NAVIGATOR ------------------*/
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39,0.6), transparent);
+    z-index: 100;
+} 
+
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.nav-menu ul{
+    display: flex;
+}
+
+.nav-menu ul li{
+    list-style-type: none;
+
+}
+
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color:white;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover, .active{
+    border-bottom: 2px solid white;
+}
+
+.nav-menu-btn{
+    display: none;
+}
+
+/*------------------ CONTENT ------------------*/
+.alert {
+  width:40%;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  max-height: 2vh;
+  display: flex;
+  gap: 5px;
+}
+
+.content-box{
+  width: 100%;
+  height: 110vh;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.content h1{
+  font-size: 35px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding:0;
+  color:#ffffff;
+}
+
+.sub-description{
+  width: 70%;
+  padding: 20px;
+  background: #ffffffe7;
+  border-radius: 15px;
+  transition: all .38s ease;
+}
+
+.action-point{
+  width: 80%;
+  margin-bottom: 30px;
+
+}
+
+.two-col{
+  width: 40%;
+}
+
+.two{
+  font-size: small;
+  margin-left: 25px;
+}
+
+.team{
+  width: 35%;
+  height: auto;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.team img{
+	width: 100%;
+	height: auto;
+}
+
+.content{
+  width: 70%;
+  height: auto;
+  margin-left: 100px;
+}
+
+::-webkit-input-placeholder{
+    color:#fff; 
+}
+
+.input-box i{
+    position: relative;
+    top:-35px;
+    left: 17px;
+    color: #fff;
+}
+
+.input-field{
+    font-size: 12px;
+    background: rgba(255,255,255,0.4);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+}
+
+.submit{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255,255,255,0.7);
+    cursor: pointer;
+}
+
+.submit:hover{
+    background: rgba(255,255,255,0.5);
+    box-shadow: 1px 5px 7px 1px rgba(0,0,0,0.2);
+}
+
+/*------------------ RESPONSIVE SPECIFICATION ------------------*/
+@media only screen and (max-width: 786px){
+  .nav-menu.responsive{
+      top: 100px;
+  }
+  .nav-menu{
+      position: absolute;
+      top: -800px;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, .9);
+      width: 100%;
+      height: 90vh;
+      transition: .3s;
+  }
+
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .nav-menu {
+    background-color: rgba(5, 170, 63, 0.375);
+    -webkit-backdrop-filter: blur(2em);
+    backdrop-filter: blur(2em);
+  }
+}
+  .nav-menu ul{
+      flex-direction: column;
+      text-align: center;
+  }
+  .nav-menu-btn{
+      display: block;
+  }
+  .nav-menu-btn i{
+      font-size: 25px;
+      color: #fff;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: .3s;
+  }
+  .nav-menu-btn i:hover{
+      background: rgba(255, 255, 255, 0.15);
+  }
+  
+}
+
+@media only screen and (max-width: 786px){
+  .two-col, .sub-description, .action-point, .content h1{
+    width: auto;
+  }
+  .content{
+    margin-left: 75px;
+  }
+  .content h1{
+    font-size: 28px;  
+  }
+
+  .sub-description, .action-point{
+    font-size: 14px;  
+  }
+}
+
+@media only screen and (max-width: 786px){
+	.team{
+    margin-top: 100px;
+		width: 35%;
+		height: auto;
+    margin-left:80px;
+	}
+  .right{
+		width: 100%;
+		height: auto;
+  }
+  .team img{
+    width: 100%;
+    height: auto;
+  }
+  .alert {
+    width:100%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    max-height: 2vh;
+    display: flex;
+    gap: 5px;
+  }
+  .wrapper{
+    overflow: visible;
+  }
+body{
+  overflow: visible;
+}
+}
+
+@media only screen and (max-width: 540px) {
+  .wrapper{
+      min-height: 110vh;
+      overflow: visible;
+  }
+
+  body{
+    overflow: visible;
+  }
+
+  .alert {
+    width:100%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    max-height: 2vh;
+    display: flex;
+    gap: 5px;
+  }
+  .team{
+    margin-top: 100px;
+	width: 70%;
+	height: auto;
+    margin-left:60px;
+	}
+	
+   .content h1{
+    font-size: 24px;
+    }
+
+    .sub-description, .submit, .two{
+    font-size: 12px;
+    }
+    .content-box{
+     margin-left: 0;
+    }
+    
+}
